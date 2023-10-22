@@ -25,9 +25,9 @@ jobs:
 
       - name: Build and publish
         run: |
-          python setup.py sdist bdist_wheel
-          twine upload --repository pypi dist/*
-        working-directory: game_development  # Adjust to your package directory
+          python /home/runner/work/setup.py sdist bdist_wheel
+          twine upload --repository pypi /home/runner/work/game_development/game_development/dist/*
+        working-directory: /home/runner/work/game_development/game_development
         env:
           TWINE_USERNAME: __token__  # Your PyPI username (usually "__token__")
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}  # Reference your PyPI API token as a secret
