@@ -25,7 +25,7 @@ jobs:
 
       - name: Build and publish
         run: |
-          python /home/runner/work/setup.py sdist bdist_wheel
+          python /home/runner/work/game_development/setup.py sdist bdist_wheel
           twine upload --repository pypi /home/runner/work/game_development/game_development/dist/*
         working-directory: /home/runner/work/game_development/game_development
         env:
