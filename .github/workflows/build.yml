@@ -1,0 +1,34 @@
+name: Python package build and publish
+
+on:
+  push:
+    branches:
+      - main  # Set the branch name you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9  # Choose your desired Python version
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      working-directory: game_development  # Adjust to your package directory
+
+    - name: Build and publish
+      run: python setup.py sdist bdist_wheel
+      working-directory: game_development  # Adjust to your package directory
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@v1
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
