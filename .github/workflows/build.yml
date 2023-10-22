@@ -1,34 +1,33 @@
-name: Python package build and publish
+name: Publish to PyPI
 
 on:
   push:
     branches:
-      - main  # Set the branch name you want to trigger the workflow on
+      - main  # Set your main branch name here
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9  # Choose your desired Python version
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Choose your desired Python version (e.g., 3.9)
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-      working-directory: game_development  # Adjust to your package directory
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+        working-directory: game_development  # Adjust to your package directory
 
-    - name: Build and publish
-      run: python setup.py sdist bdist_wheel
-      working-directory: game_development  # Adjust to your package directory
-
-    - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish
-      with:
-        user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Build and publish
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload --repository pypi dist/*
+        working-directory: game_development  # Adjust to your package directory
+        env:
+          TWINE_USERNAME: __token__  # Your PyPI username (usually "__token__")
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}  # Reference your PyPI API token as a secret
