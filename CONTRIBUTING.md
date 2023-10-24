@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 ## Style Guide
 
-If your contributions involve code changes, please adhere to the project's coding style and conventions. If there is no specific style guide mentioned, it's generally a good practice to follow Python's PEP 8 style guide.
+If your contributions involve code changes, please adhere to the [project's coding style and conventions](CODE-STYLE.md). If there is no specific style guide mentioned, it's generally a good practice to follow [Python's PEP 8 style guide](https://pep8.org/).
 
 ## License
 
