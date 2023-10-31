@@ -21,7 +21,7 @@ pip install game_development
 You can also install it using the git URL:
 
 ```
-pip install "git+https://github.com/yourusername/game_development.git@pip-install#egg=game_development"
+pip install "git+https://github.com/MKM12345/game_development.git@pip-install#egg=game_development"
 ```
 
 ## Features
