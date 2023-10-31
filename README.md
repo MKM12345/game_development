@@ -5,7 +5,7 @@
 ![First Timer Friendly](https://img.shields.io/badge/first%20timer-friendly-4DC71F?style=plastic)
 ![Test Passing](https://img.shields.io/badge/tests-all%20passing-4DC71F?style=plastic)
 
-A game development library for Python with a collection of convenient functions to simplify game development tasks in Pygame.
+A game development library for Python that simplifies game development tasks in both 2D and 3D using the power of Pygame and Panda3D.
 
 - GitHub: [https://github.com/MKM12345/game_development](https://github.com/MKM12345/game_development)
 - PyPI: [https://pypi.org/project/game_development/](https://pypi.org/project/game_development/)
@@ -17,56 +17,46 @@ Install with pip:
 ```bash
 pip install game_development
 ```
+
 You can also install it using the git URL:
 
 ```
 pip install "git+https://github.com/yourusername/game_development.git@pip-install#egg=game_development"
 ```
-### Features
-Provides a collection of functions to simplify game development in Pygame.
+
+## Features
+Simplifies game development in both Pygame (2D) and Panda3D (3D).
+Combines the power of Pygame and Panda3D to create awesome games.
 Open-source and beginner-friendly, you can contribute to the library.
 Regular updates with new functions and bug fixes.
 
-### Usage
+## Usage
 ```
-from game_development.game_development import your_function
+from game_development.game_development import Game, GameDevelopment3D, Panda3DGame
 
-# Use the provided functions in your Pygame game development project.
+# Use the provided functions in your Pygame and Panda3D game development project.
 # e.g. you might want to use it like this:
-# import pygame
-# from game_package import Game, GameSprite
+# Create a Pygame game development instance
+# game_dev = Game()
 
-# Initialize Pygame
-# pygame.init()
+# Create a Panda3D and Pygame mixer instance
+# game_mixer = GameDevelopment3D()
 
-# Create a game instance
-# game = Game(800, 600, "Simple Game")
+# Create a Panda3D utility instance
+# panda_utils = Panda3DGame()
 
-# Create a player character
-# player = GameSprite(100, 100, 64, 64, "player.png")
-
-# Add the player character to the game
-# game.add_game_object(player)
-
-# Main game loop
-# game.run()
-
-# Clean up and quit
-# game.quit()
-
+# Use the functions and classes provided by game_development to streamline your game development process.
 ```
-### Contributing
+## Contributing
 We welcome contributions from the community! To contribute to game_development:
-
-Read the [contribution guidelines](CONTRIBUTING.md).
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Make your changes and submit a pull request.
-
-### Support
+- Read the contribution guidelines.
+- Fork the repository.
+- Create a new branch for your feature or bug fix.
+- Make your changes and submit a pull request.
+## Support
 If you need help or have questions, feel free to ask on GitHub Discussions or report issues on GitHub Issues.
 
-### License
-game_development is licensed under the [MIT License](MIT).
+## License
+game_development is licensed under the [MIT License](LICENSE).
 
-Enjoy simplifying game development with game_development!
+Enjoy simplifying 2D and 3D game development with game_development!
