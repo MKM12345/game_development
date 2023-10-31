@@ -1,4 +1,6 @@
 # __init__.py for the game_development package
 
-# Import everything from game_development.py
-from game_development import *
+# Import modules from the package
+from ._game_development import *
+from .game_mixer import *
+from .panda_utils import *
